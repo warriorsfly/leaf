@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:leaf/screens/activity.dart';
-import 'package:leaf/screens/news_feed.dart';
-import 'package:leaf/screens/plan.dart';
+import 'package:leaf/screens/work_board.dart';
 import 'package:leaf/screens/profile.dart';
 import 'package:leaf/screens/progress.dart';
 
@@ -32,24 +31,27 @@ class _HomePageState extends State<HomePage> {
       tabBar: CupertinoTabBar(
         items: [
           const BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.double_music_note),
-              title: Text('News Feed')),
+              icon: Icon(const IconData(0xf38f,
+                  fontFamily: CupertinoIcons.iconFont,
+                  fontPackage: CupertinoIcons.iconFontPackage)),
+              title: Text('首页')),
           const BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.person),
-              activeIcon: Icon(CupertinoIcons.person_solid),
-              title: Text('Progress')),
+              icon: Icon(const IconData(0xf2b5,
+                  fontFamily: CupertinoIcons.iconFont,
+                  fontPackage: CupertinoIcons.iconFontPackage)),
+              // activeIcon: Icon(CupertinoIcons.person_solid),
+              title: Text('健康视图')),
           const BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.person),
-              activeIcon: Icon(CupertinoIcons.person_solid),
-              title: Text('Activity')),
+              icon: Icon(const IconData(0xf3e6,
+                  fontFamily: CupertinoIcons.iconFont,
+                  fontPackage: CupertinoIcons.iconFontPackage)),
+              // activeIcon: Icon(CupertinoIcons.ac),
+              title: Text('健康管理')),
           const BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.person),
-              activeIcon: Icon(CupertinoIcons.person_solid),
-              title: Text('Plan')),
-          const BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.person),
-              activeIcon: Icon(CupertinoIcons.person_solid),
-              title: Text('Profile')),
+              icon: Icon(const IconData(0xf41a,
+                  fontFamily: CupertinoIcons.iconFont,
+                  fontPackage: CupertinoIcons.iconFontPackage)),
+              title: Text('我的')),
         ],
       ),
       tabBuilder: (context, index) {
@@ -57,7 +59,7 @@ class _HomePageState extends State<HomePage> {
         switch (index) {
           case 0:
             return CupertinoTabView(
-              builder: (_) => NewsFeedScreen(),
+              builder: (_) => WorkBoardScreen(),
             );
 
           case 1:
@@ -68,11 +70,6 @@ class _HomePageState extends State<HomePage> {
           case 2:
             return CupertinoTabView(
               builder: (_) => ActivityScreen(),
-            );
-
-          case 3:
-            return CupertinoTabView(
-              builder: (_) => PlanScreen(),
             );
 
           default:
